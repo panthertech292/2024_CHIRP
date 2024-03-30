@@ -31,7 +31,10 @@ public class RobotContainer {
 
 
   private void configureBindings() {
-    io_MusicController.a().whileTrue(new InstantCommand(s_MusicSubsystem::loadPlayTrack));
+    io_MusicController.a().toggleOnTrue(new playMusic(s_MusicSubsystem, "1812.chrp"));
+    io_MusicController.b().toggleOnTrue(new playMusic(s_MusicSubsystem, "pirate.chrp"));
+    io_MusicController.x().toggleOnTrue(new playMusic(s_MusicSubsystem, "star.chrp"));
+    io_MusicController.y().toggleOnTrue(new playMusic(s_MusicSubsystem, "wii.chrp"));
   }
 
   /**

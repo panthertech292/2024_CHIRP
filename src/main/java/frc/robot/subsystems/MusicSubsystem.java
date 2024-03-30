@@ -31,19 +31,22 @@ public class MusicSubsystem extends SubsystemBase {
     s_Orchestra.addInstrument(FrontLeftKraken);
     s_Orchestra.addInstrument(FrontRightKraken);
 
-    var status = s_Orchestra.loadMusic("kickstart.chrp");
+    //var status = s_Orchestra.loadMusic("highway.chrp");
+    //if(!status.isOK()){
+    //  System.out.println("Error playing track!");
+    //}
+    //s_Orchestra.play();
+  }
+
+  public void loadPlayTrack(String song){
+    var status = s_Orchestra.loadMusic(song);
     if(!status.isOK()){
       System.out.println("Error playing track!");
     }
     s_Orchestra.play();
   }
-
-  public void loadPlayTrack(){
-    var status = s_Orchestra.loadMusic("kickstart.chrp");
-    if(!status.isOK()){
-      System.out.println("Error playing track!");
-    }
-    s_Orchestra.play();
+  public void stopMusic(){
+    s_Orchestra.stop();
   }
 
   @Override
